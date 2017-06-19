@@ -5,11 +5,11 @@
 * @Last Modified time: 2017-06-19 10:47:03
 */
 var webpack=require('webpack');
-var ExtractTextPlugin=require("extract-text-webpack-plugin");
-var htmlWebpackPlugin=require('html-webpack-plugin');
+var ExtractTextPlugin=require("extract-text-webpack-plugin");//npm安装插件extract-text-webpack-plugin
+var htmlWebpackPlugin=require('html-webpack-plugin');//npm安装插件html-webpack-plugin
 //环境变量配置
 var WEBPACK_ENV=process.env.WEBPACK_ENV || 'dev';
-//获取html-webpack-plugin参数的方法
+//封装方法,获取html-webpack-plugin参数的方法
 var getHtmlConfig=function(name){
 	return{
 		template:'./src/view/'+ name +'.html',
@@ -22,13 +22,12 @@ var getHtmlConfig=function(name){
 //webpack config
 var config={
 	entry:{
-		'common':['./src/page/common/index.js'],
-        'index':['./src/page/index/index.js'],
-        'login':['./src/page/login/index.js'],
+		'common':['./src/page/common/index.js'],//公用入口（js+css）
+        'index':['./src/page/index/index.js']//主入口（js+css）
     },
     output:{
-        path:'./dist',
-        publicPath:'/dist',
+        path:'./dist',//打包过后的文件目录
+        publicPath:'/dist',//系统主目录
         filename:'js/[name].js'
     },
     externals:{
@@ -42,6 +41,16 @@ var config={
     		{test: /\.(gif|jpg|png|woff|svg|eot|ttf)\??.*$/,loader:'url-loader?limit=8192&name=resource/[name].[ext]'}
     	]
     },
+    resolve:{
+    	alias:{
+    		node_modules    : __dirname+'/node_modules',
+    		util    		: __dirname+'/src/util',
+    		page    		: __dirname+'/src/page',
+    		image   		: __dirname+'/src/image',
+    		service 		: __dirname+'/src/service',
+    		view    		: __dirname+'/src/view',
+    	}
+    },
     plugins:[
          //独立通用模块到js/base.js
     	new webpack.optimize.CommonsChunkPlugin({
@@ -52,7 +61,6 @@ var config={
     	new ExtractTextPlugin("css/[name].css"),
     	//html模板的处理
     	new  htmlWebpackPlugin(getHtmlConfig('index')),
-    	new  htmlWebpackPlugin(getHtmlConfig('login')),
     ]
 };
 if('dev'=== WEBPACK_ENV){
