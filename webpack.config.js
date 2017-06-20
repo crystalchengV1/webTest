@@ -23,9 +23,14 @@ var getHtmlConfig=function(name,title){
 //webpack config
 var config={
 	entry:{
-		'common':['./src/page/common/index.js'],//公用入口（js+css）
-        'index':['./src/page/index/index.js'],//主入口（js+css）
-        'result':['./src/page/result/index.js']//主入口（js+css）
+		'common'			:	['./src/page/common/index.js'],//公用入口（js+css）
+        'index'				:	['./src/page/index/index.js'],//主入口（js+css）
+        'result'			:	['./src/page/result/index.js'],//主入口（js+css）
+        'user-login'		:	['./src/page/user-login/index.js'],//主入口（js+css）
+        'user-register'		:	['./src/page/user-register/index.js'],//主入口（js+css）
+        'user-pass-reset'	:	['./src/page/user-pass-reset/index.js'],//主入口（js+css）
+        'user-center'       : 	['./src/page/user-center/index.js'],
+        'user-center-update': 	['./src/page/user-center-update/index.js'],
     },
     output:{
         path:'./dist',//打包过后的文件目录
@@ -65,6 +70,11 @@ var config={
     	//html模板的处理
     	new  htmlWebpackPlugin(getHtmlConfig('index','首页')),
     	new  htmlWebpackPlugin(getHtmlConfig('result','操作结果')),
+    	new  htmlWebpackPlugin(getHtmlConfig('user-login','用户登录')),
+    	new  htmlWebpackPlugin(getHtmlConfig('user-register','用户注册')),
+    	new  htmlWebpackPlugin(getHtmlConfig('user-pass-reset','重置密码')),
+    	new  htmlWebpackPlugin(getHtmlConfig('user-center','个人中心')),
+    	new  htmlWebpackPlugin(getHtmlConfig('user-center-update','个人中心信息更新')),
     ]
 };
 if('dev'=== WEBPACK_ENV){

@@ -16,7 +16,7 @@ var nav={
 		});
 		//注册点击事件
 		$('.js-register').click(function(){
-			window.location.href='./register.html';
+			window.location.href='./user-register.html';
 		});
 		//退出事件
 		$('.js-loginout').click(function(){
@@ -30,7 +30,7 @@ var nav={
 	//加载用户信息
 	loadUserInfo:function(){
 		_user.checkLogin(function(res){
-			$('.user.not-login').hide().siblings('user.login').show().find('.username').text(res.username);
+			$('.user.not-login').hide().siblings('.user.login').show().find('.username').text(res.username);
 		},function(errMsg){
 		});
 	},
