@@ -23,6 +23,7 @@ var page = {
     loadUserInfo : function(){
         var userHtml = '';
         _user.getUserInfo(function(res){
+        	console.log(res);
             userHtml = _mm.renderHtml(templateIndex, res);
             $('.panel-body').html(userHtml);
         }, function(errMsg){

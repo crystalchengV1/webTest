@@ -31,6 +31,7 @@ var config={
         'user-pass-reset'	:	['./src/page/user-pass-reset/index.js'],//主入口（js+css）
         'user-center'       : 	['./src/page/user-center/index.js'],
         'user-center-update': 	['./src/page/user-center-update/index.js'],
+        'user-pass-update'	: 	['./src/page/user-pass-update/index.js'],
     },
     output:{
         path:'./dist',//打包过后的文件目录
@@ -75,6 +76,7 @@ var config={
     	new  htmlWebpackPlugin(getHtmlConfig('user-pass-reset','重置密码')),
     	new  htmlWebpackPlugin(getHtmlConfig('user-center','个人中心')),
     	new  htmlWebpackPlugin(getHtmlConfig('user-center-update','个人中心信息更新')),
+    	new  htmlWebpackPlugin(getHtmlConfig('user-pass-update','修改密码')),
     ]
 };
 if('dev'=== WEBPACK_ENV){

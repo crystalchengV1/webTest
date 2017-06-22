@@ -19,5 +19,5 @@
         <span class="label">答 案：</span>
         <span class="text">{{answer}}</span>
     </div>
-    <a class="btn btn-submit" href="./user-center-update.html">编辑</a>
+    <a class="btn btn-mini btn-submit" href="./user-center-update.html">编辑</a>
 </div>
