@@ -32,6 +32,8 @@ var config={
         'user-center'       : 	['./src/page/user-center/index.js'],
         'user-center-update': 	['./src/page/user-center-update/index.js'],
         'user-pass-update'	: 	['./src/page/user-pass-update/index.js'],
+        'list'              : 	['./src/page/list/index.js'],
+        'detail'              : 	['./src/page/detail/index.js'],
     },
     output:{
         path:'./dist',//打包过后的文件目录
@@ -77,6 +79,8 @@ var config={
     	new  htmlWebpackPlugin(getHtmlConfig('user-center','个人中心')),
     	new  htmlWebpackPlugin(getHtmlConfig('user-center-update','个人中心信息更新')),
     	new  htmlWebpackPlugin(getHtmlConfig('user-pass-update','修改密码')),
+    	new  htmlWebpackPlugin(getHtmlConfig('list', '商品列表页')),
+    	new  htmlWebpackPlugin(getHtmlConfig('detail', '商品详情页')),
     ]
 };
 if('dev'=== WEBPACK_ENV){
