@@ -13,7 +13,7 @@ var page = {
             categoryId      : _mm.getUrlParam('categoryId') || '',//目录关键字搜索
             orderBy         : _mm.getUrlParam('orderBy')    || 'default',//排序
             pageNum         : _mm.getUrlParam('pageNum')    || 1,//第几页
-            pageSize        : _mm.getUrlParam('pageSize')   || 1//每页数量
+            pageSize        : _mm.getUrlParam('pageSize')   || 10//每页数量
         }
     },
     init : function(){
