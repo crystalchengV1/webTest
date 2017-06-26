@@ -1,3 +1,11 @@
+/*
+* @Author: Rosen
+* @Date:   2017-05-30 16:51:25
+* @Last Modified by:   Rosen
+* @Last Modified time: 2017-06-05 20:58:39
+*/
+
+'use strict';
 require('./index.css');
 require('page/common/header/index.js');
 var nav             = require('page/common/nav/index.js');
@@ -121,7 +129,7 @@ var page = {
         $(document).on('click', '.btn-submit', function(){
             // 总价大于0，进行提交
             if(_this.data.cartInfo && _this.data.cartInfo.cartTotalPrice > 0){
-                window.location.href = './confirm.html';
+                window.location.href = './order-confirm.html';
             }else{
                 _mm.errorTips('请选择商品后再提交');
             }

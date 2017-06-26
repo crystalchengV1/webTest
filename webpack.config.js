@@ -35,6 +35,11 @@ var config={
         'list'              : 	['./src/page/list/index.js'],
         'detail'            : 	['./src/page/detail/index.js'],
         'cart'              : 	['./src/page/cart/index.js'],
+        'order-confirm'     : ['./src/page/order-confirm/index.js'],
+        'order-list'        : ['./src/page/order-list/index.js'],
+        'order-detail'      : ['./src/page/order-detail/index.js'],
+        'payment'           : ['./src/page/payment/index.js'],
+        'about'             : ['./src/page/about/index.js'],
     },
     output:{
         path:'./dist',//打包过后的文件目录
@@ -83,6 +88,11 @@ var config={
     	new  htmlWebpackPlugin(getHtmlConfig('list', '商品列表页')),
     	new  htmlWebpackPlugin(getHtmlConfig('detail', '商品详情页')),
     	new  htmlWebpackPlugin(getHtmlConfig('cart', '购物车')),
+    	new  htmlWebpackPlugin(getHtmlConfig('about', '关于MMall')),
+    	new  htmlWebpackPlugin(getHtmlConfig('order-confirm', '订单确认')),
+        new  htmlWebpackPlugin(getHtmlConfig('order-list', '订单列表')),
+        new  htmlWebpackPlugin(getHtmlConfig('order-detail', '订单详情')),
+        new  htmlWebpackPlugin(getHtmlConfig('payment', '订单支付')),
     ]
 };
 if('dev'=== WEBPACK_ENV){
